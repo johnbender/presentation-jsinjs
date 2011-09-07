@@ -1,0 +1,74 @@
+* me
+** vagrant
+** jquery mobile
+*** test suite maintainer
+* this
+** browser focused
+** testing barrier at jqcon
+* motivation
+** don't ship crap
+** applications \not scripts
+** JavaScript \crossout App
+*** script has small/simple/fast conotation
+* state of js testing
+** no testing 
+*** jquery top plugins
+*** additional stats from github
+** browser automation
+*** slow
+*** timing sensitive
+*** great for cross page interaction testing
+*** tests in language of choice
+*** ci integration
+** js test suites
+*** fast
+*** easy mocking
+*** jasmine, qunit, other frameworks
+*** limited ci integration
+*** single page
+*** state/timing 
+* existing issues
+** unit vs integration/uat 
+*** unit
+**** fast
+**** fragile with change
+**** easy to mock 
+*** integration
+**** slow
+**** less fragile with change
+**** harder mock server interaction
+
+** ci integration
+*** its at least semi difficult to setup
+*** very little library support
+** timing and events
+*** menu show / menu hide
+**** show menu in 200 ms w/ test expectation
+**** show menu in 250 ms with breakage
+**** ugh
+*** bind to events 
+** browser state
+*** dom only
+**** jasmine doesn't include state management
+***** jquery-jasmine
+**** qunit has it by default
+***** qunit fixtures
+*** applications
+**** hash
+**** url with pushstate/replacestate
+**** localstorage
+**** event bindings
+**** the document title!     
+
+* possible solutions
+** ci integration
+*** jasmine has nice ci integration for ruby
+*** JsTestDriver
+**** has its own framework/QUnit adapter
+*** leverage browser automation
+**** selenium selectors
+**** pass / fail
+**** failing tests
+** timing vs events
+*** bind to events 
+
