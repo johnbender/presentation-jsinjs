@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../file/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../file/qunit.js"></script>
+    <link rel="stylesheet" href="../file/qunit.css" type="text/css" media="screen" />
+  </head>
+  <body class="example">
+    <div id="qunit-feedback">
+      <h1 id="qunit-header">Slide Down Test Suite</h1>
+      <h2 id="qunit-banner"></h2>
+      <h2 id="qunit-userAgent"></h2>
+      <ol id="qunit-tests"></ol>
+    </div>
+
+    <div id="fixture">
+      <a id="show-it" href="#"> srsly? </a>
+
+      <div id="jackie" style="display: none">
+        <img src="../file/seriouslyChan.png"/>
+      </div>
+
+      <script type="text/javascript">
+$( "#show-it" ).click(function() {
+	$( "#jackie" ).slideDown( 4000, function(){
+		$( this ).trigger( "jackieishere" );
+	});
+});
+      </script>
+    </div>
+
+    <script type="text/javascript">
+
+test( "image slides down when click", function() {
+	$( "#jackie" ).bind( "jackieishere", function(){
+		ok( $(this).outerHeight() > 300 );
+		start();
+  });
+
+	$( "#show-it" ).click();
+
+	stop();
+});
+    </script>
+  </body>
+</html>
