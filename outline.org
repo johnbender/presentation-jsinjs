@@ -11,7 +11,7 @@
 ** JavaScript \crossout App
 *** script has small/simple/fast conotation
 * state of js testing
-** no testing 
+** no testing
 *** jquery top plugins
 *** additional stats from github
 ** browser automation
@@ -26,13 +26,13 @@
 *** jasmine, qunit, other frameworks
 *** limited ci integration
 *** single page
-*** state/timing 
+*** state/timing
 * existing issues
-** unit vs integration/uat 
+** unit vs integration/uat
 *** unit
 **** fast
 **** fragile with change
-**** easy to mock 
+**** easy to mock
 *** integration
 **** slow
 **** less fragile with change
@@ -46,7 +46,7 @@
 **** show menu in 200 ms w/ test expectation
 **** show menu in 250 ms with breakage
 **** ugh
-*** bind to events 
+*** bind to events
 ** browser state
 *** dom only
 **** jasmine doesn't include state management
@@ -58,7 +58,7 @@
 **** url with pushstate/replacestate
 **** localstorage
 **** event bindings
-**** the document title!     
+**** the document title!
 
 * possible solutions
 ** ci integration
@@ -70,5 +70,12 @@
 **** pass / fail
 **** failing tests
 ** timing vs events
-*** bind to events 
+*** bind to events
+** browser state
+*** setup/teardown
+*** management
+*** iframes per test
+**** side effect of parralelizing tests
 
+* misc
+** testswarm
