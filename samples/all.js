@@ -23,3 +23,11 @@ test( "image becomes opaque on click", function() {
 
 	stop();
 });
+
+$.onlyFor( "/foos", function() {
+	module( "truthsaying" );
+	
+	test( "truthyness", function() {
+		assert( true );
+  });
+});

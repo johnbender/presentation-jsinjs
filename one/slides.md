@@ -189,7 +189,10 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
 ### fixtures?
 
 !SLIDE
-### browser automation
+### automation w/ factories
+
+!SLIDE
+### server-side
 
 !SLIDE
 <pre class="large">
@@ -323,6 +326,28 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
   <span class="keyword">end</span>
 </pre>
 
+!SLIDE
+<pre>
+<span class="comment-delimiter"># </span><span class="comment">better as a middleware
+</span><span class="keyword">def</span> <span class="function-name">inject_tests</span>
+  <span class="keyword">if</span> <span class="type">Rails</span>.env.test?
+    javascript_include_tag <span class="string">"qunit_tests"</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+
+!SLIDE
+### client-side
+
+!SLIDE
+<pre>
+$.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">function</span>() {
+  module( <span class="string">"truthsaying"</span> );
+
+  test( <span class="string">"truthyness"</span>, <span class="keyword">function</span>() {
+    assert( <span class="constant">true</span> );
+  });
+});</pre>
 
 !SLIDE
 ## browser state
