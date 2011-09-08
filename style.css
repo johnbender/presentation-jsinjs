@@ -28,9 +28,13 @@ h3 {
     font-size: 4em;
 }
 
+#qunit-feedback {
+    min-height: 200px;
+}
+
 body.example {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 20px;
 }
 
 body.example img {
