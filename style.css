@@ -1,5 +1,6 @@
 body {
     font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    color: #333;
 }
 
 iframe {
@@ -23,8 +24,8 @@ h3 {
 
 .content > pre {
     color: #52676f;
-    background-color: #fcf4dc;
-    border: 1px solid grey;
+    /* background-color: #fcf4dc;
+    border: 1px solid grey; */
     padding: 10px;
     margin: 0 40px 0 40px;
     line-height: 1.5em;
@@ -57,7 +58,7 @@ h3 {
 }
 
 #fixture a {
-    color: black;
+    color: #333;
     text-decoration: none;
     font-size: 4em;
 }
@@ -89,7 +90,7 @@ span.monospace {
     opacity: 0;
 }
 
-#jackie.opaque-animation {
+#jackie.opacity-animation {
     -webkit-transition: opacity 2s linear;
 	  opacity: 1;
 }

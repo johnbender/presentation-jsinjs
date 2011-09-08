@@ -1,14 +1,20 @@
 !SLIDE
 # js testing w/ js
 
+!SLIDE center
+<img src="adobe.jpg" style="max-height: 70%"></img>
+
+!SLIDE center
+<img src="vagrant_chilling.png" style="max-height: 70%; min-height: 65%"></img>
+
+!SLIDE center
+<img src="jquery-logo.png" style="max-height: 70%"></img>
 !SLIDE bullets
-* vagrant
-* jquery mobile
 * @johnbender
 * johnbender.us
 
 !SLIDE
-## motivation
+# motivation
 
 !SLIDE
 ### ship better software
@@ -59,7 +65,7 @@
 ### easy mocking
 
 !SLIDE bullets incremental
-### libraries
+## libraries
 * qunit
 * jasmine
 * etc
@@ -76,6 +82,9 @@
 !SLIDE
 # existing issues
 
+!SLIDE
+## unit vs uat
+
 !SLIDE bullets incremental
 ## unit
 * fast
@@ -86,12 +95,6 @@
 ## uat
 * slower
 * harder to mock
-
-!SLIDE bullets incremental
-## ci
-* difficult setup
-* little library support
-* fixtures ☹
 
 !SLIDE
 ## timing / events
@@ -108,8 +111,8 @@
     <span class="css-property">opacity</span>: 0;
 }
 
-<span class="css-selector">#jackie.opaque-animation </span>{
-    -webkit-transition: opacity 2s linear;
+<span class="css-selector">#jackie.opacity-animation </span>{
+    -webkit-transition: opacity <span style="color: red">2s</span> linear;
     <span class="css-property">opacity</span>: 1;
 }
 </pre>
@@ -117,17 +120,17 @@
 !SLIDE
 <pre>
 $( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>(<span class="js2-function-param">e</span>) {
-  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opaque-animation"</span> );
+  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opacity-animation"</span> );
 });
 </pre>
 
 !SLIDE
 <pre>
-test( <span class="string">"image slides down on click"</span>, <span class="keyword">function</span>() {
+test( <span class="string">"image becomes opaque on click"</span>, <span class="keyword">function</span>() {
   setTimeout(<span class="keyword">function</span>(){
     same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
     start();
-  }, 2100);
+  }, <span style="color: red">2100</span>);
 
   $( <span class="string">"#show-it"</span> ).click();
 
@@ -140,7 +143,7 @@ test( <span class="string">"image slides down on click"</span>, <span class="key
 
 !SLIDE
 <pre>
-<span class="css-selector">#jackie.opaque-animation </span>{
+<span class="css-selector">#jackie.opacity-animation </span>{
   -webkit-transition: opacity <span style="color: red">4s</span> linear;
   <span class="css-property">opacity</span>: 1;
 }
@@ -148,6 +151,9 @@ test( <span class="string">"image slides down on click"</span>, <span class="key
 
 !SLIDE
 <iframe src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+
+!SLIDE
+### refactor to events
 
 !SLIDE
 <pre>
@@ -168,11 +174,23 @@ $( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTra
 !SLIDE
 <iframe src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
 
+!SLIDE bullets incremental
+## ci
+* difficult setup
+* little library support
+* fixtures ☹
+
+!SLIDE
+### fixtures?
+
+!SLIDE
+### browser automation
+
 !SLIDE
 ## browser state
 
 !SLIDE
-### DOM Only
+### DOM only
 
 !SLIDE
 ### jasmine-jquery
@@ -181,7 +199,7 @@ $( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTra
 ### QUnit fixtures
 
 !SLIDE bullets incremental
-### apps
+## apps
 
 * hash
 * url pushstate/replacestate
@@ -209,36 +227,6 @@ $( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTra
 
 !SLIDE
 ## timing / events
-
-!SLIDE
-### refactor to events
-
-!SLIDE
-<pre>
-$( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>() {
-  $( <span class="string">"#jackie"</span> ).slideDown( 4000, <span class="keyword">function</span>(){
-    $( <span class="builtin">this</span> ).trigger( <span class="string">"jackieishere"</span> );
-  });
-});
-</pre>
-
-!SLIDE
-<pre>
-test( <span class="string">"image slides down when click"</span>, <span class="keyword">function</span>() {
-  $( <span class="string">"#jackie"</span> ).bind( <span class="string">"jackieishere"</span>, <span class="keyword">function</span>(){
-    ok( $(<span class="builtin">this</span>).outerHeight() &gt; 300 );
-    start();
-  });
-
-  $( <span class="string">"#show-it"</span> ).click();
-
-  stop();
-});
-</pre>
-
-
-!SLIDE
-<iframe src="tests/slide-down-test-event.html"> </iframe>
 
 !SLIDE
 ### contrived

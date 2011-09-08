@@ -2,7 +2,7 @@
   opacity: 0;
 }
 
-#jackie.opaque-animation {
+#jackie.opacity-animation {
   -webkit-transition: opacity 4s linear;
   opacity: 1;
 }
