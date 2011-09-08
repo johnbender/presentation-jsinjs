@@ -189,7 +189,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
 ### fixtures?
 
 !SLIDE
-### automation w/ factories
+### auto factories
 
 !SLIDE
 ### server-side
