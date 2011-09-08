@@ -208,7 +208,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -230,7 +230,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -244,7 +244,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -258,7 +258,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     <span style="color: red">wait_for_tests</span>
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -272,7 +272,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> <span style="color: red">all_failing.empty?</span>
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -286,7 +286,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     <span style="color: red">fail_desc</span> = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     assert(all_failing.empty?, fail_desc)
@@ -300,7 +300,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
-      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
     <span style="color: red">assert(all_failing.empty?, fail_desc)</span>
