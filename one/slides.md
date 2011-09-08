@@ -68,7 +68,6 @@
 ## libraries
 * qunit
 * jasmine
-* etc
 
 !SLIDE
 ### limited ci
@@ -80,7 +79,7 @@
 ### state/timing
 
 !SLIDE
-# existing issues
+# problems
 
 !SLIDE
 ## unit vs uat
@@ -111,7 +110,7 @@
     <span class="css-property">opacity</span>: 0;
 }
 
-<span class="css-selector">#jackie.opacity-animation </span>{
+<span class="css-selector">#jackie.opacity-transition </span>{
     -webkit-transition: opacity <span style="color: red">2s</span> linear;
     <span class="css-property">opacity</span>: 1;
 }
@@ -120,7 +119,7 @@
 !SLIDE
 <pre>
 $( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>(<span class="js2-function-param">e</span>) {
-  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opacity-animation"</span> );
+  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opacity-transition"</span> );
 });
 </pre>
 
@@ -143,7 +142,7 @@ test( <span class="string">"image becomes opaque on click"</span>, <span class="
 
 !SLIDE
 <pre>
-<span class="css-selector">#jackie.opacity-animation </span>{
+<span class="css-selector">#jackie.opacity-transition </span>{
   -webkit-transition: opacity <span style="color: red">4s</span> linear;
   <span class="css-property">opacity</span>: 1;
 }
@@ -165,7 +164,7 @@ setTimeout(<span class="keyword">function</span>(){
 
 !SLIDE
 <pre>
-$( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTransitionEnd"</span>, <span class="keyword">function</span>(){
+$( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTransitionEnd"</span>, <span class="keyword">function</span>(){
   same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
   start();
 });
@@ -181,10 +180,149 @@ $( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTra
 * fixtures ☹
 
 !SLIDE
+### jasmine
+
+!SLIDE
+### JSTestDriver
+
+!SLIDE
 ### fixtures?
 
 !SLIDE
 ### browser automation
+
+!SLIDE
+<pre class="large">
+<span class="keyword">class</span> <span class="type">TestJS</span> &lt; <span class="type">Test</span>::<span class="type">Unit</span>::<span class="type">TestCase</span>
+  include <span class="type">Capybara</span>
+
+  <span class="keyword">def</span> <span class="function-name">setup</span>
+    <span class="type">Factory</span>(<span class="constant">:foo</span>, <span class="constant">:bar</span> =&gt; <span class="string">"baz"</span>, <span class="constant">:bak</span> =&gt; <span class="string">"bing"</span>)
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre>
+  <span class="keyword">def</span> <span class="function-name">setup</span>
+    <span class="type">Factory</span>(<span class="constant">:foo</span>, <span class="constant">:bar</span> =&gt; <span class="string">"baz"</span>, <span class="constant">:bak</span> =&gt; <span class="string">"bing"</span>)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    <span style="color: red">visit(foos_path)</span>
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    <span style="color: red">wait_for_tests</span>
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> <span style="color: red">all_failing.empty?</span>
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    <span style="color: red">fail_desc</span> = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">:&amp;</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    <span style="color: red">assert(all_failing.empty?, fail_desc)</span>
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">wait_for_tests</span>(attempts=100)
+    attempts.times <span class="keyword">do</span>
+      <span class="keyword">break</span> <span class="keyword">if</span> find(<span class="string">"#qunit-banner"</span>)[<span class="constant">:class</span>].include?(<span class="string">"pass"</span>)
+      <span class="keyword">break</span> <span class="keyword">unless</span> all_failing.empty?
+
+      sleep 1
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+</pre>
+
+!SLIDE
+<pre>
+  <span class="keyword">def</span> <span class="function-name">all_failing</span>
+    all(<span class="string">"#qunit-tests .fail"</span>)
+  <span class="keyword">end</span>
+</pre>
+
 
 !SLIDE
 ## browser state
@@ -206,39 +344,6 @@ $( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTra
 * localstorage
 * event bindings
 * doc title
-
-!SLIDE
-# possible solutions
-
-!SLIDE
-## ci
-
-!SLIDE
-### jasmine
-
-!SLIDE
-### JSTestDriver
-
-!SLIDE
-### browser automation
-
-!SLIDE
-### capybara example select pass fail
-
-!SLIDE
-## timing / events
-
-!SLIDE
-### contrived
-
-!SLIDE
-### single page focused
-
-!SLIDE
-### jqm page navigation
-
-!SLIDE
-## browser state
 
 !SLIDE
 ### setup / teardown

@@ -22,41 +22,6 @@ h3 {
     font-size: 4em;
 }
 
-.content > pre {
-    color: #52676f;
-    /* background-color: #fcf4dc;
-    border: 1px solid grey; */
-    padding: 10px;
-    margin: 0 40px 0 40px;
-    line-height: 1.5em;
-    font-size: 2.1em;
-}
-.builtin {
-    /* font-lock-builtin-face */
-    color: #728a05;
-}
-.js2-magic-paren {
-    /* js2-magic-paren-face */
-}
-.keyword {
-    /* font-lock-keyword-face */
-    color: #728a05;
-}
-.string {
-    /* font-lock-string-face */
-    color: #259185;
-}
-
-.css-property {
-    /* css-property */
-    color: #2075c7;
-}
-
-.css-selector {
-    /* css-selector */
-    color: #2075c7;
-}
-
 #fixture a {
     color: #333;
     text-decoration: none;
@@ -94,3 +59,66 @@ span.monospace {
     -webkit-transition: opacity 2s linear;
 	  opacity: 1;
 }
+
+/* code highlights */
+
+.content > pre.large {
+    font-size: 1.5em;
+}
+
+.content > pre.medium {
+    font-size: 1.8em;
+}
+
+.content > pre {
+    color: #52676f;
+    padding: 10px;
+    margin: 0 40px 0 40px;
+    line-height: 1.5em;
+    font-size: 2.2em;
+}
+.builtin {
+    /* font-lock-builtin-face */
+    color: #728a05;
+}
+
+.keyword {
+    /* font-lock-keyword-face */
+    color: #728a05;
+}
+.string {
+    /* font-lock-string-face */
+    color: #259185;
+}
+
+.css-property {
+    /* css-property */
+    color: #2075c7;
+}
+
+.css-selector {
+    /* css-selector */
+    color: #2075c7;
+}
+
+.function-name {
+    /* font-lock-function-name-face */
+    color: #2075c7;
+}
+.keyword {
+    /* font-lock-keyword-face */
+    color: #728a05;
+}
+.string {
+    /* font-lock-string-face */
+    color: #259185;
+}
+.type {
+    /* font-lock-type-face */
+    color: #a57705;
+}
+.variable-name {
+    /* font-lock-variable-name-face */
+    color: #2075c7;
+}
+
