@@ -2,20 +2,19 @@
 <html>
   <head>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <link rel="stylesheet" href="../file/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../file/style.css" type="text/css" media="screen" />
   </head>
   <body class="example">
     <div id="fixture">
-      <a id="show-it" href="#"> srsly? </a>
+      <a id="show-it" href="#"> jackie? </a>
 
-      <div id="jackie" style="display: none">
-        <img src="../file/seriouslyChan.png"/>
+      <div id="jackie">
+        <img src="../../file/seriouslyChan.png"/>
       </div>
 
       <script type="text/javascript">
         $("#show-it").click(function(e) {
-          $("#jackie").slideDown( 2000 );
-	        e.preventDefault();
+          $("#jackie").addClass( "opaque-animation" );
         });
       </script>
     </div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../file/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../../file/qunit.js"></script>
+    <link rel="stylesheet" href="../../file/qunit.css" type="text/css" media="screen" />
+  </head>
+  <body class="example">
+    <div id="qunit-feedback">
+      <h1 id="qunit-header">Opacity Test Suite</h1>
+      <h2 id="qunit-banner"></h2>
+      <h2 id="qunit-userAgent"></h2>
+      <ol id="qunit-tests"></ol>
+    </div>
+
+    <div id="fixture">
+      <a id="show-it" href="#"> jackie? </a>
+
+      <div id="jackie">
+        <img src="../../file/seriouslyChan.png"/>
+      </div>
+
+      <script type="text/javascript">
+        $("#show-it").click(function(e) {
+          $("#jackie").addClass( "opaque-animation" );
+        });
+      </script>
+    </div>
+
+    <style type="text/css" media="screen">
+      #jackie.opaque-animation {
+        -webkit-transition: opacity 4s linear;
+        opacity: 1;
+      }
+    </style>
+
+    <script type="text/javascript">
+test( "image becomes opaque on click", function() {
+$( "#jackie" ).bind( "webkitTransitionEnd", function(){
+		same( $("#jackie").css("opacity"), "1" );
+		start();
+  });
+
+	$( "#show-it" ).click();
+
+	stop();
+});
+    </script>
+  </body>
+</html>

@@ -21,14 +21,14 @@ h3 {
     font-size: 4em;
 }
 
-pre {
+.content > pre {
     color: #52676f;
     background-color: #fcf4dc;
     border: 1px solid grey;
     padding: 10px;
     margin: 0 40px 0 40px;
     line-height: 1.5em;
-    font-size: 2.2em;
+    font-size: 2.1em;
 }
 .builtin {
     /* font-lock-builtin-face */
@@ -44,6 +44,16 @@ pre {
 .string {
     /* font-lock-string-face */
     color: #259185;
+}
+
+.css-property {
+    /* css-property */
+    color: #2075c7;
+}
+
+.css-selector {
+    /* css-selector */
+    color: #2075c7;
 }
 
 #fixture a {
@@ -68,4 +78,18 @@ body.example #qunit-feedback {
 
 span.monospace {
     font-family: monospace;
+}
+
+.heart {
+    color: red;
+    font-size: 1.5em;
+}
+
+#jackie {
+    opacity: 0;
+}
+
+#jackie.opaque-animation {
+    -webkit-transition: opacity 2s linear;
+	  opacity: 1;
 }

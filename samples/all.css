@@ -1,0 +1,8 @@
+#jackie {
+  opacity: 0;
+}
+
+#jackie.opaque-animation {
+  -webkit-transition: opacity 4s linear;
+  opacity: 1;
+}

@@ -44,7 +44,7 @@
 ### cross page
 
 !SLIDE
-### ♥ language
+### <span class="heart">♥</span> language
 
 !SLIDE
 ### ci
@@ -91,6 +91,7 @@
 ## ci
 * difficult setup
 * little library support
+* fixtures ☹
 
 !SLIDE
 ## timing / events
@@ -99,22 +100,34 @@
 ### <span class="monospace">setTimeout</span> is bad
 
 !SLIDE
-<iframe src="tests/slide-down.html"> </iframe>
+<iframe src="tests/timing/opacity.html"> </iframe>
 
 !SLIDE
 <pre>
-$( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>() {
-  $( <span class="string">"#jackie"</span> ).slideDown( 2000 );
+<span class="css-selector">#jackie </span>{
+    <span class="css-property">opacity</span>: 0;
+}
+
+<span class="css-selector">#jackie.opaque-animation </span>{
+    -webkit-transition: opacity 2s linear;
+    <span class="css-property">opacity</span>: 1;
+}
+</pre>
+
+!SLIDE
+<pre>
+$( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>(<span class="js2-function-param">e</span>) {
+  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opaque-animation"</span> );
 });
 </pre>
 
 !SLIDE
 <pre>
-test( <span class="string">"image slides down when click"</span>, <span class="keyword">function</span>() {
+test( <span class="string">"image slides down on click"</span>, <span class="keyword">function</span>() {
   setTimeout(<span class="keyword">function</span>(){
-    ok( $(<span class="string">"#jackie"</span>).outerHeight() &gt; 300 );
+    same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
     start();
-  }, 2000);
+  }, 2100);
 
   $( <span class="string">"#show-it"</span> ).click();
 
@@ -123,17 +136,37 @@ test( <span class="string">"image slides down when click"</span>, <span class="k
 </pre>
 
 !SLIDE
-<iframe src="tests/slide-down-test.html"> </iframe>
+<iframe src="tests/timing/opacity-test.html"> </iframe>
 
 !SLIDE
 <pre>
-$( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>() {
-  $( <span class="string">"#jackie"</span> ).slideDown( 4000 );
+<span class="css-selector">#jackie.opaque-animation </span>{
+  -webkit-transition: opacity <span style="color: red">4s</span> linear;
+  <span class="css-property">opacity</span>: 1;
+}
+</pre>
+
+!SLIDE
+<iframe src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+
+!SLIDE
+<pre>
+setTimeout(<span class="keyword">function</span>(){
+  same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
+  start();
+}, 2100);
+</pre>
+
+!SLIDE
+<pre>
+$( <span class="string">"#jackie"</span> ).bind( <span class="string">"webkitTransitionEnd"</span>, <span class="keyword">function</span>(){
+  same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
+  start();
 });
 </pre>
 
 !SLIDE
-<iframe src="tests/slide-down-test-slow.html"> </iframe>
+<iframe src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
 
 !SLIDE
 ## browser state
