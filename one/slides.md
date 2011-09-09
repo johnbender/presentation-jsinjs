@@ -321,11 +321,17 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
 </pre>
 
 !SLIDE
+<iframe src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
+
+!SLIDE
 <pre>
   <span class="keyword">def</span> <span class="function-name">all_failing</span>
     all(<span class="string">"#qunit-tests .fail"</span>)
   <span class="keyword">end</span>
 </pre>
+
+!SLIDE
+<iframe src="tests/timing/opacity-test-slow-fail.html"> </iframe>
 
 !SLIDE
 <pre>

@@ -15,7 +15,7 @@ h1 {
     padding: 1em 0;
 }
 
-h2 {
+.content h2 {
     font-size: 6em;
     background: purple;
     color: white;
