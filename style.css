@@ -10,12 +10,16 @@ iframe {
 
 h1 {
     font-size: 6em;
-    color: #D65600;
+    background: #D65600;
+    color: white;
+    padding: 1em 0;
 }
 
 h2 {
     font-size: 6em;
-    color: purple;
+    background: purple;
+    color: white;
+    padding: 0.25em 0;
 }
 
 h3 {

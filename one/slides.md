@@ -1,17 +1,18 @@
 !SLIDE
 # js testing w/ js
 
-!SLIDE center
-<img src="adobe.jpg" style="max-height: 70%"></img>
+!SLIDE
+### @johnbender
+### johnbender.us
 
 !SLIDE center
 <img src="vagrant_chilling.png" style="max-height: 70%; min-height: 65%"></img>
 
 !SLIDE center
+<img src="adobe.jpg" style="max-height: 70%"></img>
+
+!SLIDE center
 <img src="jquery-logo.png" style="max-height: 70%"></img>
-!SLIDE bullets
-* @johnbender
-* johnbender.us
 
 !SLIDE
 # motivation
