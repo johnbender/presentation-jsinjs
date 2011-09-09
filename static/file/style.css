@@ -85,6 +85,13 @@ span.monospace {
     line-height: 1.5em;
     font-size: 2.2em;
 }
+
+.content > pre b {
+    background: #D65600;
+    color: white;
+    outline: 5px solid #D65600;
+}
+
 .builtin {
     /* font-lock-builtin-face */
     color: #728a05;

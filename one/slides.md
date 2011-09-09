@@ -24,7 +24,7 @@
 ### Java<span style="text-decoration: line-through;">Script</span>
 
 !SLIDE
-### Java<span style="color: red">App</span>
+### Java<b>App</b>
 
 !SLIDE
 ### scripts ⇒ applications
@@ -112,7 +112,7 @@
 }
 
 <span class="css-selector">#jackie.opacity-transition </span>{
-    -webkit-transition: opacity <span style="color: red">2s</span> linear;
+    -webkit-transition: opacity <b>2s</b> linear;
     <span class="css-property">opacity</span>: 1;
 }
 </pre>
@@ -130,7 +130,7 @@ test( <span class="string">"image becomes opaque on click"</span>, <span class="
   setTimeout(<span class="keyword">function</span>(){
     same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
     start();
-  }, <span style="color: red">2100</span>);
+  }, <b>2100</b>);
 
   $( <span class="string">"#show-it"</span> ).click();
 
@@ -144,7 +144,7 @@ test( <span class="string">"image becomes opaque on click"</span>, <span class="
 !SLIDE
 <pre>
 <span class="css-selector">#jackie.opacity-transition </span>{
-  -webkit-transition: opacity <span style="color: red">4s</span> linear;
+  -webkit-transition: opacity <b>4s</b> linear;
   <span class="css-property">opacity</span>: 1;
 }
 </pre>
@@ -241,7 +241,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
 !SLIDE
 <pre class="medium">
   <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
-    <span style="color: red">visit(foos_path)</span>
+    <b>visit(foos_path)</b>
     wait_for_tests
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
@@ -256,7 +256,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
 <pre class="medium">
   <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
     visit(foos_path)
-    <span style="color: red">wait_for_tests</span>
+    <b>wait_for_tests</b>
 
     fail_desc = <span class="keyword">unless</span> all_failing.empty?
       all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
@@ -272,7 +272,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     visit(foos_path)
     wait_for_tests
 
-    fail_desc = <span class="keyword">unless</span> <span style="color: red">all_failing.empty?</span>
+    fail_desc = <span class="keyword">unless</span> <b>all_failing.empty?</b>
       all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
@@ -286,7 +286,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
     visit(foos_path)
     wait_for_tests
 
-    <span style="color: red">fail_desc</span> = <span class="keyword">unless</span> all_failing.empty?
+    <b>fail_desc</b> = <span class="keyword">unless</span> all_failing.empty?
       all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
@@ -304,7 +304,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
       all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
     <span class="keyword">end</span>
 
-    <span style="color: red">assert(all_failing.empty?, fail_desc)</span>
+    <b>assert(all_failing.empty?, fail_desc)</b>
   <span class="keyword">end</span>
 </pre>
 
