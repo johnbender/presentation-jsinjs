@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>My Preso</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/style.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="one/slides/1">
+<h1>js testing w/ js</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/2">
+<h3>@johnbender</h3>
+
+<h3>johnbender.us</h3>
+
+<h3>github.com/johnbender</h3></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slides/3">
+<p><img src="./file/one/vagrant_chilling.png" style="max-height: 600px; min-height: 450px"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slides/4">
+<p><img src="./file/one/adobe.jpg" style="max-height: 600px"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slides/5">
+<p><img src="./file/one/jquery-logo.png" style="max-height: 600px"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/6">
+<h1>motivation</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/7">
+<h3>ship better software</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/8">
+<h3>scripts &#x21D2; applications</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/9">
+<h3>avoid frustration</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/10">
+<h1>state of js testing</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/11">
+<h2>no testing</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/12">
+<h3>jquery plugins</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/13">
+<h2>browser automation</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/14">
+<h3>slow</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/15">
+<h3>time sensitive</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/16">
+<h3>cross page</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/17">
+<h3><span class="heart">&#x2665;</span> language</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/18">
+<h3>ci</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/19">
+<h2>javascript</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/20">
+<h3>fast</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/21">
+<h3>easy mocking</h3></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/slides/22">
+<h2>libraries</h2>
+
+<ul>
+<li>qunit</li>
+<li>jasmine</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/23">
+<h3>limited ci</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/24">
+<h3>single page</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/25">
+<h3>state/timing</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/26">
+<h1>problems</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/27">
+<h2>unit vs uat</h2></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/slides/28">
+<h2>unit</h2>
+
+<ul>
+<li>fast</li>
+<li>fragile</li>
+<li>easy to mock</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/slides/29">
+<h2>uat</h2>
+
+<ul>
+<li>slower</li>
+<li>harder to mock</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/30">
+<h2>timing / events</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/31">
+<h3><span class="monospace">setTimeout</span> is bad</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/32">
+<iframe src="tests/timing/opacity.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/33">
+<pre>
+<span class="css-selector">#jackie </span>{
+    <span class="css-property">opacity</span>: 0;
+}
+
+<span class="css-selector">#jackie.opacity-transition </span>{
+    -moz-transition: opacity <b>2s</b> linear;
+    <span class="css-property">opacity</span>: 1;
+}
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/34">
+<pre>
+$( <span class="string">"#show-it"</span> ).click(<span class="keyword">function</span>(<span class="js2-function-param">e</span>) {
+  $( <span class="string">"#jackie"</span> ).addClass( <span class="string">"opacity-transition"</span> );
+});
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/35">
+<pre>
+test( <span class="string">"image becomes opaque on click"</span>, <span class="keyword">function</span>() {
+  setTimeout(<span class="keyword">function</span>(){
+    same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
+    start();
+  }, <b>2100</b>);
+
+  $( <span class="string">"#show-it"</span> ).click();
+
+  stop();
+});
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content iframe_slide" ref="one/slides/36">
+<iframe data-src="tests/timing/opacity-test.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/37">
+<pre>
+<span class="css-selector">#jackie.opacity-transition </span>{
+  -moz-transition: opacity <b>4s</b> linear;
+  <span class="css-property">opacity</span>: 1;
+}
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content iframe_slide" ref="one/slides/38">
+<iframe data-src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/39">
+<h3>refactor to events</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/40">
+<pre>
+setTimeout(<span class="keyword">function</span>(){
+  same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
+  start();
+}, 2100);
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/41">
+<pre>
+$( <span class="string">"#jackie"</span> ).one( <span class="string">"transitionend"</span>, <span class="keyword">function</span>(){
+  same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
+  start();
+});
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content iframe_slide" ref="one/slides/42">
+<iframe data-src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/slides/43">
+<h2>ci</h2>
+
+<ul>
+<li>difficult setup</li>
+<li>little library support</li>
+<li>fixtures &#x2639;</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/44">
+<h3>jasmine</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/45">
+<h3>JSTestDriver</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/46">
+<h3>fixtures?</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/47">
+<h3>auto factories</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/48">
+<h3>server-side</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/49">
+<pre class="large">
+<span class="keyword">class</span> <span class="type">TestJS</span> &lt; <span class="type">Test</span>::<span class="type">Unit</span>::<span class="type">TestCase</span>
+  include <span class="type">Capybara</span>
+
+  <span class="keyword">def</span> <span class="function-name">setup</span>
+    <span class="type">Factory</span>(<span class="constant">:foo</span>, <span class="constant">:bar</span> =&gt; <span class="string">"baz"</span>, <span class="constant">:bak</span> =&gt; <span class="string">"bing"</span>)
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/50">
+<pre>
+  <span class="keyword">def</span> <span class="function-name">setup</span>
+    <span class="type">Factory</span>(<span class="constant">:foo</span>, <span class="constant">:bar</span> =&gt; <span class="string">"baz"</span>, <span class="constant">:bak</span> =&gt; <span class="string">"bing"</span>)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/51">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/52">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    <b>visit(foos_path)</b>
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/53">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    <b>wait_for_tests</b>
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/54">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> <b>all_failing.empty?</b>
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/55">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    <b>fail_desc</b> = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    assert(all_failing.empty?, fail_desc)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/56">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">test_qunit_page</span>
+    visit(foos_path)
+    wait_for_tests
+
+    fail_desc = <span class="keyword">unless</span> all_failing.empty?
+      all_failing.find(<span class="string">".test-name"</span>).map(<span class="constant">&amp;:</span>text).join(<span class="string">", "</span>)
+    <span class="keyword">end</span>
+
+    <b>assert(all_failing.empty?, fail_desc)</b>
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/57">
+<pre class="medium">
+  <span class="keyword">def</span> <span class="function-name">wait_for_tests</span>(attempts=100)
+    attempts.times <span class="keyword">do</span>
+      <span class="keyword">break</span> <span class="keyword">if</span> find(<span class="string">"#qunit-banner"</span>)[<span class="constant">:class</span>].include?(<span class="string">"pass"</span>)
+      <span class="keyword">break</span> <span class="keyword">unless</span> all_failing.empty?
+
+      sleep 1
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content iframe_slide" ref="one/slides/58">
+<iframe data-src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/59">
+<pre>
+  <span class="keyword">def</span> <span class="function-name">all_failing</span>
+    all(<span class="string">"#qunit-tests .fail"</span>)
+  <span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content iframe_slide" ref="one/slides/60">
+<iframe data-src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/61">
+<pre>
+<span class="comment-delimiter"># </span><span class="comment">better as a middleware
+</span><span class="keyword">def</span> <span class="function-name">inject_tests</span>
+  <span class="keyword">if</span> <span class="type">Rails</span>.env.test?
+    javascript_include_tag <span class="string">"qunit_tests"</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/62">
+<h3>client-side</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/63">
+<pre>
+$.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">function</span>() {
+  module( <span class="string">"truthsaying"</span> );
+
+  test( <span class="string">"truthyness"</span>, <span class="keyword">function</span>() {
+    assert( <span class="constant">true</span> );
+  });
+});</pre>
+
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/64">
+<h2>browser state</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/65">
+<h3>DOM only</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/66">
+<h3>jasmine-jquery</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/67">
+<h3>QUnit fixtures</h3></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/slides/68">
+<h2>apps</h2>
+
+<ul>
+<li>hash</li>
+<li>url pushstate/replacestate</li>
+<li>localstorage</li>
+<li>event bindings</li>
+<li>doc title</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/69">
+<h3>setup / teardown</h3></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slides/70">
+<h3>iframes (?)</h3></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slides/71">
+<h1>thanks!</h1>
+
+<ul>
+<li>@johnbender</li>
+<li>johnbender.us</li>
+</ul>
+
+
+<script>
+// bind to custom event
+$(".iframe_slide").bind("showoff:show", function (event) {
+  var $target = $(event.target);
+  console.log($target.parent());
+  console.log($target.find("iframe"));
+  $target.find("iframe").attr("src", $target.find("iframe").attr("data-src"));
+});
+</script>
+</div>
+</div></div>
+
+</body>
+</html>
