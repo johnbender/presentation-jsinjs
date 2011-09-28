@@ -1,5 +1,6 @@
-!SLIDE
+!SLIDE intro
 # js testing w/ js
+### johnbender.github.com/presentation-jsinjs
 
 !SLIDE
 ### @johnbender
@@ -17,6 +18,9 @@
 
 !SLIDE
 # motivation
+
+!SLIDE
+### open source
 
 !SLIDE
 ### ship better software
@@ -89,6 +93,73 @@
 * fragile
 * easy to mock
 
+!SLIDE
+<pre>
+<span class="keyword">var</span> <span class="function-name">Notifier</span> = <span class="keyword">function</span>( <span class="js2-function-param">alertSelector</span> ) {
+  <span class="builtin">this</span>.elem = $( alertSelector );
+};
+
+Notifier.prototype.<span class="function-name">notify</span> = <span class="keyword">function</span>() {
+  <span class="keyword">if</span>( <span class="builtin">this</span>.isError(<span class="builtin">this</span>.elem.text()) ){
+    <span class="builtin">this</span>.elem.addClass( <span class="string">"error"</span> );
+  }
+
+  <span class="builtin">this</span>.elem.show();
+};
+
+Notifier.prototype.<span class="function-name">isError</span> = <span class="keyword">function</span>( <span class="js2-function-param">text</span> ) {
+  <span class="keyword">return</span> text.search(<span class="string">/Error/</span>) &gt;= 0;
+};
+</pre>
+
+!SLIDE
+<pre>
+<span class="keyword">var</span> <span class="function-name">Notifier</span> = <span class="keyword">function</span>( <span class="js2-function-param">alertSelector</span> ) {
+  <span class="builtin">this</span>.elem = $( alertSelector );
+};
+
+Notifier.prototype.<span class="function-name">notify</span> = <span class="keyword">function</span>() {
+  <span class="keyword">if</span>( <span class="builtin">this</span>.isError(<span class="builtin">this</span>.elem.text()) ){
+    <span class="builtin">this</span>.elem.addClass( <span class="string">"error"</span> );
+  }
+
+  <b><span class="builtin">this</span>.elem.show();</b>
+};
+
+Notifier.prototype.<span class="function-name">isError</span> = <span class="keyword">function</span>( <span class="js2-function-param">text</span> ) {
+  <span class="keyword">return</span> text.search(<span class="string">/Error/</span>) &gt;= 0;
+};
+</pre>
+
+!SLIDE
+<pre>
+test( <span class="string">"notify shows alert element"</span>, <span class="keyword">function</span>() {
+  <span class="keyword">var</span> <span class="variable-name">notifier</span> = <span class="keyword">new</span> Notifier( <span class="string">"#alert"</span> );
+
+  <span class="comment">// isolate the show in the notify method
+</span>  Notifier.prototype.<span class="function-name">isError</span> = <span class="keyword">function</span>() {
+    <span class="keyword">return</span> <span class="constant">false</span>;
+  };
+
+  notifier.notify();
+  ok( notifier.elem.is(<span class="string">":visible"</span>) );
+});</pre>
+
+!SLIDE
+<pre>
+test( <span class="string">"notify shows alert element"</span>, <span class="keyword">function</span>() {
+  <span class="keyword">var</span> <span class="variable-name">notifier</span> = <span class="keyword">new</span> Notifier( <span class="string">"#alert"</span> );
+
+  <span class="comment">// isolate the show in the notify method
+</span>  Notifier.prototype.<b><span class="function-name">isError</span></b> = <span class="keyword">function</span>() {
+    <span class="keyword">return</span> <span class="constant">false</span>;
+  };
+
+  notifier.notify();
+  ok( notifier.elem.is(<span class="string">":visible"</span>) );
+});</pre>
+
+
 !SLIDE bullets incremental
 ## uat
 * slower
@@ -100,7 +171,7 @@
 !SLIDE
 ### <span class="monospace">setTimeout</span> is bad
 
-!SLIDE
+!SLIDE iframe_slide
 <iframe src="tests/timing/opacity.html"> </iframe>
 
 !SLIDE
@@ -185,7 +256,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"transition
 ### JSTestDriver
 
 !SLIDE
-### fixtures?
+### fixtures ☹
 
 !SLIDE
 ### auto factories
@@ -390,8 +461,6 @@ $.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">fu
 // bind to custom event
 $(".iframe_slide").bind("showoff:show", function (event) {
   var $target = $(event.target);
-  console.log($target.parent());
-  console.log($target.find("iframe"));
   $target.find("iframe").attr("src", $target.find("iframe").attr("data-src"));
 });
 </script>

@@ -68,22 +68,26 @@ span.monospace {
 	opacity: 1;
 }
 
+.content.intro h3 {
+  font-size: 3.01em;
+}
+
 /* code highlights */
 
 .content > pre.large {
-  font-size: 1.8em;
+  font-size: 2.0em;
 }
 
 .content > pre.medium {
-  font-size: 2.0em;
+  font-size: 2.2em;
 }
 
 .content > pre {
   color: #52676f;
   padding: 10px;
   margin: 0 40px 0 40px;
-  line-height: 1.5em;
-  font-size: 2.2em;
+  line-height: 1.4em;
+  font-size: 2.5em;
 }
 
 .content > pre b {

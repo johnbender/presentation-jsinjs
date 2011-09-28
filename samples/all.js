@@ -34,3 +34,47 @@ $.onlyForPathname( "/foos", function() {
 		assert( true );
 	});
 });
+
+var Notifier = function( alertSelector ) {
+	this.elem = $( alertSelector );
+};
+
+Notifier.prototype.notify = function() {
+	if( this.isError(this.elem.text()) ){
+    this.elem.addClass( "error" );
+	}
+
+  this.elem.show();
+};
+
+Notifier.prototype.isError = function( text ) {
+	return text.search(/Error/) >= 0;
+};
+
+Notifier.prototype.isErrorOrWarning = function( text ) {
+	return text.search(/Error/) >= 0;
+};
+
+test( "notify shows the alert element", function() {
+  var notifier = new Notifier( "#alert" );
+
+  // isolate the show in the notify method
+  Notifier.prototype.isError = function() {
+    return false;
+  };
+
+  notifier.notify();
+  ok( notifier.elem.is(":visible") );
+});
+
+test( "empty input results in alert", function() {
+	var input = $( "#info" ),
+	    submit = $( "#submit" ),
+		  alert = $( "#alert" );
+
+	input.val("");
+
+	submit.click();
+
+  ok( notifier.elem.is(":visible") );
+});
