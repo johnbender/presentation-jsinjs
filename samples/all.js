@@ -68,13 +68,9 @@ test( "notify shows the alert element", function() {
 });
 
 test( "empty input results in alert", function() {
-	var input = $( "#info" ),
-	    submit = $( "#submit" ),
-		  alert = $( "#alert" );
+	$( "#username" ).val("");
 
-	input.val("");
-
-	submit.click();
+	$( "#submit" ).click();
 
   ok( notifier.elem.is(":visible") );
 });

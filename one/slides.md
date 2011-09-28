@@ -164,6 +164,18 @@ test( <span class="string">"notify shows alert element"</span>, <span class="key
 ## uat
 * slower
 * harder to mock
+* time sensitive
+
+!SLIDE
+<pre>
+test( <span class="string">"empty input results in alert"</span>, <span class="keyword">function</span>() {
+  $( <span class="string">"#username"</span> ).val(<span class="string">""</span>);
+
+  $( <span class="string">"#submit"</span> ).click();
+
+  ok( notifier.elem.is(<span class="string">":visible"</span>) );
+});
+</pre>
 
 !SLIDE
 ## timing / events
@@ -378,7 +390,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"transition
 </pre>
 
 !SLIDE
-<pre class="medium">
+<pre class="large">
   <span class="keyword">def</span> <span class="function-name">wait_for_tests</span>(attempts=100)
     attempts.times <span class="keyword">do</span>
       <span class="keyword">break</span> <span class="keyword">if</span> find(<span class="string">"#qunit-banner"</span>)[<span class="constant">:class</span>].include?(<span class="string">"pass"</span>)
