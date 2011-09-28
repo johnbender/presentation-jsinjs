@@ -4,15 +4,16 @@
 !SLIDE
 ### @johnbender
 ### johnbender.us
+### github.com/johnbender
 
 !SLIDE center
-<img src="vagrant_chilling.png" style="max-height: 70%; min-height: 65%"></img>
+<img src="vagrant_chilling.png" style="max-height: 600px; min-height: 450px"></img>
 
 !SLIDE center
-<img src="adobe.jpg" style="max-height: 70%"></img>
+<img src="adobe.jpg" style="max-height: 600px"></img>
 
 !SLIDE center
-<img src="jquery-logo.png" style="max-height: 70%"></img>
+<img src="jquery-logo.png" style="max-height: 600px"></img>
 
 !SLIDE
 # motivation
@@ -21,13 +22,10 @@
 ### ship better software
 
 !SLIDE
-### Java<span style="text-decoration: line-through;">Script</span>
-
-!SLIDE
-### Java<b>App</b>
-
-!SLIDE
 ### scripts ⇒ applications
+
+!SLIDE
+### avoid frustration
 
 !SLIDE
 # state of js testing
@@ -57,7 +55,7 @@
 ### ci
 
 !SLIDE
-## js
+## javascript
 
 !SLIDE
 ### fast
@@ -112,7 +110,7 @@
 }
 
 <span class="css-selector">#jackie.opacity-transition </span>{
-    -webkit-transition: opacity <b>2s</b> linear;
+    -moz-transition: opacity <b>2s</b> linear;
     <span class="css-property">opacity</span>: 1;
 }
 </pre>
@@ -138,19 +136,19 @@ test( <span class="string">"image becomes opaque on click"</span>, <span class="
 });
 </pre>
 
-!SLIDE
-<iframe src="tests/timing/opacity-test.html"> </iframe>
+!SLIDE iframe_slide
+<iframe data-src="tests/timing/opacity-test.html"> </iframe>
 
 !SLIDE
 <pre>
 <span class="css-selector">#jackie.opacity-transition </span>{
-  -webkit-transition: opacity <b>4s</b> linear;
+  -moz-transition: opacity <b>4s</b> linear;
   <span class="css-property">opacity</span>: 1;
 }
 </pre>
 
-!SLIDE
-<iframe src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+!SLIDE iframe_slide
+<iframe data-src="tests/timing/opacity-test-slow-fail.html"> </iframe>
 
 !SLIDE
 ### refactor to events
@@ -165,14 +163,14 @@ setTimeout(<span class="keyword">function</span>(){
 
 !SLIDE
 <pre>
-$( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTransitionEnd"</span>, <span class="keyword">function</span>(){
+$( <span class="string">"#jackie"</span> ).one( <span class="string">"transitionend"</span>, <span class="keyword">function</span>(){
   same( $(<span class="string">"#jackie"</span>).css(<span class="string">"opacity"</span>), <span class="string">"1"</span> );
   start();
 });
 </pre>
 
-!SLIDE
-<iframe src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
+!SLIDE iframe_slide
+<iframe data-src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
 
 !SLIDE bullets incremental
 ## ci
@@ -320,8 +318,8 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
   <span class="keyword">end</span>
 </pre>
 
-!SLIDE
-<iframe src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
+!SLIDE iframe_slide
+<iframe data-src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
 
 !SLIDE
 <pre>
@@ -330,8 +328,8 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"webkitTran
   <span class="keyword">end</span>
 </pre>
 
-!SLIDE
-<iframe src="tests/timing/opacity-test-slow-fail.html"> </iframe>
+!SLIDE iframe_slide
+<iframe data-src="tests/timing/opacity-test-slow-fail.html"> </iframe>
 
 !SLIDE
 <pre>
@@ -387,3 +385,14 @@ $.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">fu
 # thanks!
 * @johnbender
 * johnbender.us
+
+<script>
+// bind to custom event
+$(".iframe_slide").bind("showoff:show", function (event) {
+  var $target = $(event.target);
+  console.log($target.parent());
+  console.log($target.find("iframe"));
+  $target.find("iframe").attr("src", $target.find("iframe").attr("data-src"));
+});
+</script>
+

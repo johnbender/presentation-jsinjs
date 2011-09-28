@@ -3,6 +3,11 @@
 }
 
 #jackie.opacity-animation {
-  -webkit-transition: opacity 4s linear;
+  -moz-transition: opacity 2s linear;
+  opacity: 1;
+}
+
+#jackie.opacity-animation {
+  -moz-transition: opacity 4s linear;
   opacity: 1;
 }

@@ -30,21 +30,21 @@
 
     <style type="text/css" media="screen">
       #jackie.opacity-animation {
-        -webkit-transition: opacity 4s linear;
+        -moz-transition: opacity 4s linear;
         opacity: 1;
       }
     </style>
 
     <script type="text/javascript">
       test( "image becomes opaque when click", function() {
-	    $( "#show-it" ).click();
+	      $( "#show-it" ).click();
 
-	    setTimeout(function(){
-		    same( $("#jackie").css("opacity"), "1" );
-		    start();
-      }, 2100);
+	      setTimeout(function(){
+		      same( $("#jackie").css("opacity"), "1" );
+		      start();
+        }, 2100);
 
-	    stop();
+	      stop();
       });
     </script>
   </body>

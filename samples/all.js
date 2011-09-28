@@ -16,7 +16,7 @@ test( "image becomes opaque on click", function() {
 
 // good
 test( "image becomes opaque on click", function() {
-	$( "#jackie" ).bind( "webkitTransitionEnd", function(){
+	$( "#jackie" ).bind( "transitionend", function(){
 		same( $("#jackie").css("opacity"), "1" );
 		start();
 	});

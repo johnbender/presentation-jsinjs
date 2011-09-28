@@ -30,22 +30,22 @@
 
     <style type="text/css" media="screen">
       #jackie.opacity-animation {
-        -webkit-transition: opacity 4s linear;
+        -moz-transition: opacity 4s linear;
         opacity: 1;
       }
     </style>
 
     <script type="text/javascript">
-test( "image becomes opaque on click", function() {
-$( "#jackie" ).bind( "webkitTransitionEnd", function(){
-		same( $("#jackie").css("opacity"), "1" );
-		start();
-  });
+      test( "image becomes opaque on click", function() {
+        $( "#jackie" ).bind( "transitionend", function(){
+		      same( $("#jackie").css("opacity"), "1" );
+		      start();
+        });
 
-	$( "#show-it" ).click();
+	      $( "#show-it" ).click();
 
-	stop();
-});
+	      stop();
+      });
     </script>
   </body>
 </html>
