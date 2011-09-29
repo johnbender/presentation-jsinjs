@@ -67,7 +67,7 @@
 !SLIDE
 ### easy mocking
 
-!SLIDE bullets incremental
+!SLIDE bullets
 ## libraries
 * qunit
 * jasmine
@@ -87,7 +87,7 @@
 !SLIDE
 ## unit vs uat
 
-!SLIDE bullets incremental
+!SLIDE bullets
 ## unit
 * fast
 * fragile
@@ -160,7 +160,7 @@ test( <span class="string">"notify shows alert element"</span>, <span class="key
 });</pre>
 
 
-!SLIDE bullets incremental
+!SLIDE bullets
 ## uat
 * slower
 * harder to mock
@@ -255,7 +255,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"transition
 !SLIDE iframe_slide
 <iframe data-src="tests/timing/opacity-test-slow-succeed.html"> </iframe>
 
-!SLIDE bullets incremental
+!SLIDE bullets
 ## ci
 * difficult setup
 * little library support
@@ -449,8 +449,8 @@ $.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">fu
 !SLIDE
 ### QUnit fixtures
 
-!SLIDE bullets incremental
-## apps
+!SLIDE bullets
+## app state
 
 * hash
 * url pushstate/replacestate
