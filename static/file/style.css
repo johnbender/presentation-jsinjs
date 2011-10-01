@@ -8,7 +8,7 @@ iframe {
   height: 768px;
 }
 
-h1 {
+.content h1 {
   font-size: 6em;
   background: #D65600;
   color: white;

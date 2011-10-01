@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script class="jsbin" src="../../file/jquery.js"></script>
+    <link rel="stylesheet" href="../../file/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../../file/qunit.js"></script>
+    <link rel="stylesheet" href="../../file/qunit.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../file/jquery.mobile.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="../../file/jquery.mobile.js"></script>
+  </head>
+  <body class="example">
+    <div id="qunit-feedback">
+      <h1 id="qunit-header">Foo Test Suite</h1>
+      <h2 id="qunit-banner"></h2>
+      <h2 id="qunit-userAgent"></h2>
+      <ol id="qunit-tests"></ol>
+    </div>
+
+    <div data-role="page" style="margin-top: 210px; min-height: 567px;">
+      <div data-role="header">
+        <h1>All the Foos</h1>
+      </div>
+      <ul id="foo-list" data-role="listview" data-inset="true" style="margin: 20px;">
+        <li><a href="">Foo #1</a></li>
+        <li><a href="">Foo #2</a></li>
+        <li><a href="">Foo #3</a></li>
+        <li><a href="">Foo #4</a></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      test( "this test runs", function() {
+        ok( true );
+      });
+    </script>
+  </body>
+</html>

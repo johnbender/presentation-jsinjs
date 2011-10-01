@@ -72,5 +72,5 @@ test( "empty input results in alert", function() {
 
 	$( "#submit" ).click();
 
-  ok( notifier.elem.is(":visible") );
+  ok( $("#alert").is(":visible") );
 });

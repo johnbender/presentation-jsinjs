@@ -2,19 +2,25 @@
 # js testing w/ js
 ### johnbender.github.com/presentation-jsinjs
 
-!SLIDE
-### @johnbender
-### johnbender.us
-### github.com/johnbender
-
-!SLIDE center
-<img src="vagrant_chilling.png" style="max-height: 600px; min-height: 450px"></img>
+!SLIDE bullets
+## me
+*  @johnbender
+* johnbender.us
+* github.com/johnbender
 
 !SLIDE center
 <img src="adobe.jpg" style="max-height: 600px"></img>
 
+!SLIDE bullets
+## projects
+* <img src="vagrant_chilling.png" style="max-height: 250px;"></img>
+* <img src="jquery-logo.png" style="max-height: 100px"></img>
+
 !SLIDE center
-<img src="jquery-logo.png" style="max-height: 600px"></img>
+<img src="superhero.gif" style="max-height: 700px"></img>
+
+!SLIDE center
+<img src="pigpen.jpg"></img>
 
 !SLIDE
 # motivation
@@ -24,6 +30,9 @@
 
 !SLIDE
 ### ship better software
+
+!SLIDE center
+<img src="schedule.jpg"></img>
 
 !SLIDE
 ### scripts ⇒ applications
@@ -35,7 +44,7 @@
 # state of js testing
 
 !SLIDE
-## no testing
+## no testing ☹
 
 !SLIDE
 ### jquery plugins
@@ -65,7 +74,7 @@
 ### fast
 
 !SLIDE
-### easy mocking
+### easy stubbing
 
 !SLIDE bullets
 ## libraries
@@ -91,7 +100,7 @@
 ## unit
 * fast
 * fragile
-* easy to mock
+* easy to stub
 
 !SLIDE
 <pre>
@@ -99,7 +108,7 @@
   <span class="builtin">this</span>.elem = $( alertSelector );
 };
 
-Notifier.prototype.<span class="function-name">notify</span> = <span class="keyword">function</span>() {
+Notifier.prototype.<span class="function-name">notify</span> = <span class="keyword">function</span>() {<
   <span class="keyword">if</span>( <span class="builtin">this</span>.isError(<span class="builtin">this</span>.elem.text()) ){
     <span class="builtin">this</span>.elem.addClass( <span class="string">"error"</span> );
   }
@@ -163,7 +172,7 @@ test( <span class="string">"notify shows alert element"</span>, <span class="key
 !SLIDE bullets
 ## uat
 * slower
-* harder to mock
+* harder to stub/mock
 * time sensitive
 
 !SLIDE
@@ -173,7 +182,7 @@ test( <span class="string">"empty input results in alert"</span>, <span class="k
 
   $( <span class="string">"#submit"</span> ).click();
 
-  ok( notifier.elem.is(<span class="string">":visible"</span>) );
+  ok( $(<span class="string">"#alert"</span><span class="js2-magic-paren">)</span>.is(<span class="string">":visible"</span>) );
 });
 </pre>
 
@@ -271,7 +280,7 @@ $( <span class="string">"#jackie"</span> ).one( <span class="string">"transition
 ### fixtures ☹
 
 !SLIDE
-### auto factories
+### one solution
 
 !SLIDE
 ### server-side
@@ -436,6 +445,12 @@ $.onlyForPathname( <span class="string">"/foos"</span>, <span class="keyword">fu
     assert( <span class="constant">true</span> );
   });
 });</pre>
+
+!SLIDE iframe_slide
+<iframe data-src="tests/foos/foo-actual.html" scrolling="no"> </iframe>
+
+!SLIDE iframe_slide
+<iframe data-src="tests/foos/foo-test.html" scrolling="no"> </iframe>
 
 !SLIDE
 ## browser state
